@@ -1,0 +1,1 @@
+C:\Users\metah\IdeaProjects\zPawLib\build\classes\kotlin\main\me\zpaw\zpawlib\data\ConfigManager.class

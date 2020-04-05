@@ -1,0 +1,7 @@
+name: ZPawLib
+version: @version@
+main: me.zpaw.zpawlib.ZPawLib
+api-version: 1.13
+load: STARTUP
+authors: [zPaw]
+description: Custom library for zPaw Spigot/Paper plugins.
