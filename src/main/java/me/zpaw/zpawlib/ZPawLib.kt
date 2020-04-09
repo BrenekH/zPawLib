@@ -1,6 +1,7 @@
 package me.zpaw.zpawlib
 
 import me.zpaw.zpawlib.data.ConfigManager
+import me.zpaw.zpawlib.dependencies.Metrics
 import me.zpaw.zpawlib.eventlisteners.PlayerJoinEventListener
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.*
@@ -10,6 +11,12 @@ class ZPawLib: JavaPlugin() {
 
     override fun onEnable() {
         server.pluginManager.registerEvents(PlayerJoinEventListener(playerCache, this), this)
+
+        val metrics: Metrics = Metrics(this, 7066)
+    }
+
+    override fun onDisable() {
+        playerCache.saveConfig()
     }
 
     fun getPlayer(name: String): zPlayer? {
