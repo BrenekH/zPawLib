@@ -12,15 +12,15 @@ class ZPawLib: JavaPlugin() {
     override fun onEnable() {
         server.pluginManager.registerEvents(PlayerJoinEventListener(playerCache, this), this)
 
-        val metrics: Metrics = Metrics(this, 7066)
+        val metrics = Metrics(this, 7066)
     }
 
     override fun onDisable() {
         playerCache.saveConfig()
     }
 
-    fun getPlayer(name: String): zPlayer? {
+    fun getPlayer(name: String): ZPlayer? {
         val playerUUID: UUID = UUID.fromString((playerCache.config.get("players.$name.uuid", null) ?: return null) as String?)
-        return zPlayer(playerUUID)
+        return ZPlayer(playerUUID)
     }
 }

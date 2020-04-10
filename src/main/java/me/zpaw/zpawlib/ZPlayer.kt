@@ -5,7 +5,7 @@ import org.bukkit.OfflinePlayer
 import org.bukkit.entity.Player
 import java.util.UUID
 
-class zPlayer(uuid: UUID) {
+class ZPlayer(uuid: UUID) {
     val player: OfflinePlayer = Bukkit.getOfflinePlayer(uuid)
     var onlinePlayer: Player? = null
 
