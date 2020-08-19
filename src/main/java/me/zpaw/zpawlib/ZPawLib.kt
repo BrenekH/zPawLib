@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin
 import java.util.*
 
 class ZPawLib: JavaPlugin() {
-    val playerCache: ConfigManager = ConfigManager(this, "playerCache.yml")
+    private val playerCache: ConfigManager = ConfigManager(this, "playerCache.yml")
 
     override fun onEnable() {
         server.pluginManager.registerEvents(PlayerJoinEventListener(playerCache, this), this)
