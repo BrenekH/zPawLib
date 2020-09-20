@@ -16,6 +16,7 @@ class World {
                         val cloneFrom = Location(getWorld("world"), x.toDouble(), y.toDouble(), z.toDouble())
 
                         cloneTo.block.type = cloneFrom.block.type
+                        cloneTo.block.blockData = cloneFrom.block.blockData
                     }
                 }
             }
