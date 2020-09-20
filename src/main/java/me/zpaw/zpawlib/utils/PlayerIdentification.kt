@@ -5,14 +5,14 @@ import org.bukkit.entity.Player
 
 class PlayerIdentification {
     companion object {
-        fun playersInArea(x1: Int, y1: Int, z1: Int, x2: Int, y2: Int, z2: Int): List<Player> {
+        fun playersInArea(lowerX: Int, lowerY: Int, lowerZ: Int, higherX: Int, higherY: Int, higherZ: Int): List<Player> {
             val onlinePlayers = Bukkit.getOnlinePlayers()
             val inAreaList: MutableList<Player> = mutableListOf()
             for (player in onlinePlayers) {
                 val playerLocation = player.location
-                if (playerLocation.x >= x1 && playerLocation.x <= x2 &&
-                        playerLocation.y >= y1 && playerLocation.y <= y2 &&
-                        playerLocation.z >= z1 && playerLocation.z <= z2) {
+                if (playerLocation.x >= lowerX && playerLocation.x <= higherX &&
+                        playerLocation.y >= lowerY && playerLocation.y <= higherY &&
+                        playerLocation.z >= lowerZ && playerLocation.z <= higherZ) {
                     inAreaList.add(player)
                 }
             }
