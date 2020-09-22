@@ -12,8 +12,8 @@ class World {
             for (x in lowerBound.x.toInt()..upperBound.x.toInt()) {
                 for (y in lowerBound.y.toInt()..upperBound.y.toInt()) {
                     for (z in lowerBound.z.toInt()..upperBound.z.toInt()) {
-                        val cloneTo = Location(getWorld("world"), destinationLowerBound.x + (x.toDouble() - lowerBound.x), destinationLowerBound.y + (y.toDouble() - lowerBound.y), destinationLowerBound.z + (z.toDouble() - lowerBound.z))
-                        val cloneFrom = Location(getWorld("world"), x.toDouble(), y.toDouble(), z.toDouble())
+                        val cloneTo = Location(lowerBound.world, destinationLowerBound.x + (x.toDouble() - lowerBound.x), destinationLowerBound.y + (y.toDouble() - lowerBound.y), destinationLowerBound.z + (z.toDouble() - lowerBound.z))
+                        val cloneFrom = Location(lowerBound.world, x.toDouble(), y.toDouble(), z.toDouble())
 
                         cloneTo.block.type = cloneFrom.block.type
                         cloneTo.block.blockData = cloneFrom.block.blockData
