@@ -1,11 +1,12 @@
 package me.zpaw.zpawlib.utils
 
 import org.bukkit.Bukkit
+import org.bukkit.Location
 import org.bukkit.entity.Player
 
 class PlayerIdentification {
     companion object {
-        fun playersInArea(lowerX: Int, lowerY: Int, lowerZ: Int, higherX: Int, higherY: Int, higherZ: Int): List<Player> {
+        fun playersInArea(lowerX: Double, lowerY: Double, lowerZ: Double, higherX: Double, higherY: Double, higherZ: Double): List<Player> {
             val onlinePlayers = Bukkit.getOnlinePlayers()
             val inAreaList: MutableList<Player> = mutableListOf()
             for (player in onlinePlayers) {
@@ -18,5 +19,7 @@ class PlayerIdentification {
             }
             return inAreaList.toList()
         }
+
+        fun playersInArea(lowerLocation: Location, upperLocation: Location) = playersInArea(lowerLocation.x, lowerLocation.y, lowerLocation.z, upperLocation.x, upperLocation.y, upperLocation.z)
     }
 }
